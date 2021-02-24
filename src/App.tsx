@@ -2,7 +2,7 @@ import Router from 'preact-router'
 import { h, render } from 'preact'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import Plausible from 'plausible-tracker'
+import Plausible from 'plausible-tracker/src'
 /** @jsx h */
 
 import Home from './routes/Home'
