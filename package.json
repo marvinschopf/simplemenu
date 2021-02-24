@@ -8,7 +8,8 @@
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "test": "jest ./tests"
+    "test": "jest ./tests",
+    "prettier": "prettier --write src/ tests/ .github/"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -44,6 +45,7 @@
     "jest-preset-preact": "^4.0.2",
     "mkdirp": "^1.0.4",
     "preact-cli": "^3.0.0",
+    "prettier": "^2.2.1",
     "sirv-cli": "^1.0.0-next.3",
     "typescript": "^3.7.5"
   },
@@ -53,5 +55,12 @@
       "<rootDir>/tests/__mocks__/browserMocks.ts",
       "<rootDir>/tests/__mocks__/setupTests.ts"
     ]
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": true
   }
 }
