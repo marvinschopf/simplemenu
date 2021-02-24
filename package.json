@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "build": "preact build",
+    "build": "yarn dlx preact-cli build",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
