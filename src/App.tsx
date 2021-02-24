@@ -10,11 +10,15 @@ import { FirebaseAuthProvider } from '@react-firebase/auth'
 
 import firebaseConfig from './config/firebase'
 
-const plausible = Plausible({
-    domain: process.env.PLAUSIBLE_DOMAIN,
-});
+let plausible: any | false = false;
 
-plausible.enableAutoPageviews();
+if(process.env.ENABLE_ANALYTICS) {
+    plausible = Plausible({
+        domain: process.env.PLAUSIBLE_DOMAIN,
+    });
+    
+    plausible.enableAutoPageviews();
+}
 
 export default function Controller() {
 	return (
