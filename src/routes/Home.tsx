@@ -1,4 +1,4 @@
-import { Component, h } from 'preact'
+import { Component, h } from "preact"
 
 class App extends Component {
 	render() {

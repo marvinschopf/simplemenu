@@ -1,26 +1,26 @@
-import Router from 'preact-router'
-import { h, render } from 'preact'
-import firebase from 'firebase/app'
-import 'firebase/auth'
-import Plausible from 'plausible-tracker'
+import Router from "preact-router"
+import { h, render } from "preact"
+import firebase from "firebase/app"
+import "firebase/auth"
+import Plausible from "plausible-tracker"
 /** @jsx h */
 
-import Home from './routes/Home'
-import { FirebaseAuthProvider } from '@react-firebase/auth'
+import Home from "./routes/Home"
+import { FirebaseAuthProvider } from "@react-firebase/auth"
 
-import firebaseConfig from './config/firebase'
+import firebaseConfig from "./config/firebase"
 
-import Container from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container"
 
-let plausible: any | false = false;
+let plausible: any | false = false
 
-if(typeof document !== 'undefined' && typeof window !== 'undefined') {
-	if(process.env.ENABLE_ANALYTICS) {
+if (typeof document !== "undefined" && typeof window !== "undefined") {
+	if (process.env.ENABLE_ANALYTICS) {
 		plausible = Plausible({
 			domain: process.env.PLAUSIBLE_DOMAIN,
-		});
-		
-		plausible.enableAutoPageviews();
+		})
+
+		plausible.enableAutoPageviews()
 	}
 }
 
@@ -34,7 +34,7 @@ export default function Controller() {
 				</Router>
 				<p>
 					<small>
-						Version:{' '}
+						Version:{" "}
 						<a
 							href={`https://github.com/marvinschopf/simplemenu/commit/${process.env.CURRENT_COMMIT_HASH}`}
 						>
