@@ -1,66 +1,66 @@
 {
-  "private": true,
-  "name": "simplemenu",
-  "version": "0.0.0",
-  "license": "AGPL-3.0-or-later",
-  "scripts": {
-    "build": "CURRENT_COMMIT_HASH=$(git rev-parse HEAD) CURRENT_COMMIT_HASH_SHORT=$(git rev-parse --short HEAD) yarn exec preact build",
-    "serve": "sirv build --port 8080 --cors --single",
-    "dev": "preact watch",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "test": "jest ./tests",
-    "prettier": "prettier --write src/ tests/ .github/ *.json *.yml *.md"
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "preact",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "ignorePatterns": [
-      "build/"
-    ]
-  },
-  "dependencies": {
-    "@react-firebase/auth": "^0.2.10",
-    "@react-firebase/firestore": "^0.5.5",
-    "firebase": "^8.2.9",
-    "plausible-tracker": "^0.3.1",
-    "preact": "^10.3.1",
-    "preact-render-to-string": "^5.1.4",
-    "preact-router": "^3.2.1",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.3"
-  },
-  "devDependencies": {
-    "@types/enzyme": "^3.10.5",
-    "@types/jest": "^26.0.8",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-preact-pure": "^2.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-preact": "^1.1.1",
-    "jest": "^26.2.2",
-    "jest-preset-preact": "^4.0.2",
-    "mkdirp": "^1.0.4",
-    "preact-cli": "^3.0.0",
-    "prettier": "^2.2.1",
-    "sirv-cli": "^1.0.0-next.3",
-    "typescript": "^3.7.5"
-  },
-  "jest": {
-    "preset": "jest-preset-preact",
-    "setupFiles": [
-      "<rootDir>/tests/__mocks__/browserMocks.ts",
-      "<rootDir>/tests/__mocks__/setupTests.ts"
-    ]
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": false,
-    "singleQuote": true,
-    "useTabs": true
-  }
+	"private": true,
+	"name": "simplemenu",
+	"version": "0.0.0",
+	"license": "AGPL-3.0-or-later",
+	"scripts": {
+		"build": "CURRENT_COMMIT_HASH=$(git rev-parse HEAD) CURRENT_COMMIT_HASH_SHORT=$(git rev-parse --short HEAD) yarn exec preact build",
+		"serve": "sirv build --port 8080 --cors --single",
+		"dev": "preact watch",
+		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+		"test": "jest ./tests",
+		"prettier": "prettier --write src/ tests/ .github/ *.json *.yml *.md"
+	},
+	"eslintConfig": {
+		"parser": "@typescript-eslint/parser",
+		"extends": [
+			"preact",
+			"plugin:@typescript-eslint/recommended"
+		],
+		"ignorePatterns": [
+			"build/"
+		]
+	},
+	"dependencies": {
+		"@react-firebase/auth": "^0.2.10",
+		"@react-firebase/firestore": "^0.5.5",
+		"firebase": "^8.2.9",
+		"plausible-tracker": "^0.3.1",
+		"preact": "^10.3.1",
+		"preact-render-to-string": "^5.1.4",
+		"preact-router": "^3.2.1",
+		"semantic-ui-css": "^2.4.1",
+		"semantic-ui-react": "^2.0.3"
+	},
+	"devDependencies": {
+		"@types/enzyme": "^3.10.5",
+		"@types/jest": "^26.0.8",
+		"@typescript-eslint/eslint-plugin": "^2.25.0",
+		"@typescript-eslint/parser": "^2.25.0",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-preact-pure": "^2.2.0",
+		"eslint": "^6.8.0",
+		"eslint-config-preact": "^1.1.1",
+		"jest": "^26.2.2",
+		"jest-preset-preact": "^4.0.2",
+		"mkdirp": "^1.0.4",
+		"preact-cli": "^3.0.0",
+		"prettier": "^2.2.1",
+		"sirv-cli": "^1.0.0-next.3",
+		"typescript": "^3.7.5"
+	},
+	"jest": {
+		"preset": "jest-preset-preact",
+		"setupFiles": [
+			"<rootDir>/tests/__mocks__/browserMocks.ts",
+			"<rootDir>/tests/__mocks__/setupTests.ts"
+		]
+	},
+	"prettier": {
+		"trailingComma": "es5",
+		"tabWidth": 4,
+		"semi": false,
+		"singleQuote": true,
+		"useTabs": true
+	}
 }
