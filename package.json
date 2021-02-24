@@ -2,7 +2,7 @@
   "private": true,
   "name": "simplemenu",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
