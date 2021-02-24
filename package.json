@@ -29,9 +29,7 @@
 		"plausible-tracker": "^0.3.1",
 		"preact": "^10.3.1",
 		"preact-render-to-string": "^5.1.4",
-		"preact-router": "^3.2.1",
-		"semantic-ui-css": "^2.4.1",
-		"semantic-ui-react": "^2.0.3"
+		"preact-router": "^3.2.1"
 	},
 	"devDependencies": {
 		"@marvman/preact-cli-plugin-env-vars": "^2.0.0",
