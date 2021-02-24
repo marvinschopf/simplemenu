@@ -36,4 +36,4 @@ jobs:
       run: yarn install
 
     - name: Build
-      run: preact build
+      run: yarn exec preact build
