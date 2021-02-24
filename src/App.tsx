@@ -1,9 +1,9 @@
-import Router from "preact-router"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { LinkContainer } from "react-router-bootstrap"
 import { h, render } from "preact"
 import firebase from "firebase/app"
 import "firebase/auth"
 import Plausible from "plausible-tracker"
-/** @jsx h */
 
 import Home from "./routes/Home"
 import { FirebaseAuthProvider } from "@react-firebase/auth"
@@ -11,6 +11,10 @@ import { FirebaseAuthProvider } from "@react-firebase/auth"
 import firebaseConfig from "./config/firebase"
 
 import Container from "react-bootstrap/Container"
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+import Button from "react-bootstrap/Button"
+import Login from "./routes/Login"
 
 let plausible: any | false = false
 
@@ -28,9 +32,37 @@ export default function Controller() {
 	return (
 		<FirebaseAuthProvider firebase={firebase} {...firebaseConfig}>
 			{/*@ts-ignore*/}
+			<Navbar bg="light">
+				<LinkContainer to="/">
+					{/*@ts-ignore*/}
+					<Navbar.Brand>SimpleMenu</Navbar.Brand>
+				</LinkContainer>
+				{/*@ts-ignore*/}
+				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				{/*@ts-ignore*/}
+				<Navbar.Collapse id="basic-navbar-nav">
+					{/*@ts-ignore*/}
+					<Nav className="mr-auto"></Nav>
+					{/*@ts-ignore*/}
+					<Nav>
+						<LinkContainer to="/login">
+							{/*@ts-ignore*/}
+							<Button>Login</Button>
+						</LinkContainer>
+					</Nav>
+				</Navbar.Collapse>
+			</Navbar>
+			{/*@ts-ignore*/}
 			<Container>
 				<Router>
-					<Home path="/" />
+					<Switch>
+						<Route path="/login">
+							<Login />
+						</Route>
+						<Route path="/">
+							<Home />
+						</Route>
+					</Switch>
 				</Router>
 				<p>
 					<small>
