@@ -19,6 +19,11 @@ export default function Controller() {
             <Router>
                 <Home path="/" />
             </Router>
+            <p>
+                <small>
+                    Version: <a href={`https://github.com/marvinschopf/simplemenu/commit/${process.env.CURRENT_COMMIT_HASH}`}>{process.env.CURRENT_COMMIT_HASH_SHORT}</a>
+                </small>
+            </p>
         </FirebaseAuthProvider>
     );
 }
