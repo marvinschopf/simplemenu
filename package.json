@@ -21,6 +21,8 @@
     ]
   },
   "dependencies": {
+    "@react-firebase/auth": "^0.2.10",
+    "firebase": "^8.2.9",
     "preact": "^10.3.1",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1"
