@@ -13030,6 +13030,7 @@ fsevents@^1.2.7:
     firebase: ^8.2.9
     jest: ^26.2.2
     jest-preset-preact: ^4.0.2
+    mkdirp: ^1.0.4
     preact: ^10.3.1
     preact-cli: ^3.0.0
     preact-render-to-string: ^5.1.4
