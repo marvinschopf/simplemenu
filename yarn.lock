@@ -2029,6 +2029,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-firebase/firestore@npm:^0.5.5":
+  version: 0.5.5
+  resolution: "@react-firebase/firestore@npm:0.5.5"
+  dependencies:
+    immer: ^1.5.0
+    lodash.get: ^4.4.2
+    lodash.set: ^4.3.2
+    react: 15.x || 16.x
+    render-and-add-props: ^0.5.0
+  peerDependencies:
+    firebase: ">=4"
+    react: ">= 16.3"
+  checksum: 0cfcffb3eb0ea28e13c5345a5e3edcb18d5ac91d1bf4a4e923e3685d0827d3309f3f77fe8e91b147a2aba3425e09ad4a6e89ef0f12e002ce56248e03b6f41b17
+  languageName: node
+  linkType: hard
+
 "@rollup/plugin-node-resolve@npm:^7.1.1":
   version: 7.1.3
   resolution: "@rollup/plugin-node-resolve@npm:7.1.3"
@@ -7641,6 +7657,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"immer@npm:^1.5.0":
+  version: 1.12.1
+  resolution: "immer@npm:1.12.1"
+  checksum: 633610938c338dde20c6e6aa4565d164bf3898e712e8a834fd4a07b06833c9707df46d990f296ea61a07068b26da44631d043061dd508797f5d7082b42501148
+  languageName: node
+  linkType: hard
+
 "import-cwd@npm:^2.0.0":
   version: 2.1.0
   resolution: "import-cwd@npm:2.1.0"
@@ -9435,6 +9458,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lodash.set@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "lodash.set@npm:4.3.2"
+  checksum: 4dfedacae1c1cf86385a2b6e30ba538f06c90d703a0abd83a11432d80ec24b4016fe27359cdc0554a02a31a468789cbb282801dd755e54581cf0295477e2341d
+  languageName: node
+  linkType: hard
+
 "lodash.sortby@npm:^4.7.0":
   version: 4.7.0
   resolution: "lodash.sortby@npm:4.7.0"
@@ -9498,7 +9528,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -11721,7 +11751,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.7.2":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -12029,6 +12059,17 @@ fsevents@^1.2.7:
   version: 0.8.3
   resolution: "react-refresh@npm:0.8.3"
   checksum: 38f06df8e0a20701b96e5d680838a3528d66cfb53db79843d30cb9517df3262ec596607147439975267bf0634bee77101db37298ea79b5742cc28664632f3c76
+  languageName: node
+  linkType: hard
+
+"react@npm:15.x || 16.x":
+  version: 16.14.0
+  resolution: "react@npm:16.14.0"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+    prop-types: ^15.6.2
+  checksum: 2769580b22952a52de3b5b2ea0f09cb904030b762d759739f49ab4da0b1f550e5c087ce3728c4be90f423d09481e0c075483c0c30b1ea9c549445c8b12020fd3
   languageName: node
   linkType: hard
 
@@ -12977,6 +13018,7 @@ fsevents@^1.2.7:
   resolution: "simplemenu@workspace:."
   dependencies:
     "@react-firebase/auth": ^0.2.10
+    "@react-firebase/firestore": ^0.5.5
     "@types/enzyme": ^3.10.5
     "@types/jest": ^26.0.8
     "@typescript-eslint/eslint-plugin": ^2.25.0
