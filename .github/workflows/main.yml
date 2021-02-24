@@ -18,7 +18,7 @@ jobs:
         node-version: "15"
 
     - name: Use Yarn Berry
-      run: yarn version set berry
+      run: yarn set version berry
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
