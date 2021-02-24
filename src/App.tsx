@@ -2,7 +2,7 @@ import Router from 'preact-router'
 import { h, render } from 'preact'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import Plausible from '@marvman/plausible-tracker'
+import Plausible from 'plausible-tracker'
 /** @jsx h */
 
 import Home from './routes/Home'
@@ -12,12 +12,14 @@ import firebaseConfig from './config/firebase'
 
 let plausible: any | false = false;
 
-if(process.env.ENABLE_ANALYTICS) {
-    plausible = Plausible({
-        domain: process.env.PLAUSIBLE_DOMAIN,
-    });
-    
-    plausible.enableAutoPageviews();
+if(typeof document !== 'undefined' && typeof window !== 'undefined') {
+	if(process.env.ENABLE_ANALYTICS) {
+		plausible = Plausible({
+			domain: process.env.PLAUSIBLE_DOMAIN,
+		});
+		
+		plausible.enableAutoPageviews();
+	}
 }
 
 export default function Controller() {

@@ -1397,11 +1397,6 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@marvman/plausible-tracker@^0.3.2":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@marvman/plausible-tracker/-/plausible-tracker-0.3.3.tgz#6f496c7d6af1c4eaabaa7ff33be34874e23dc197"
-  integrity sha512-2hclk9lPNeBwbejm3iJdQaEUM+rLBMZtSNzcAJsMiZnbC7r59dgcOZaQww2hIzR4YPrBQF5TtV0qRI2kOjzkyw==
-
 "@mdn/browser-compat-data@^2.0.7":
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@mdn/browser-compat-data/-/browser-compat-data-2.0.7.tgz#72ec37b9c1e00ce0b4e0309d753be18e2da12ee3"
@@ -8352,6 +8347,11 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
+
+plausible-tracker@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/plausible-tracker/-/plausible-tracker-0.3.1.tgz#dd4e1f59cafc7bf1b00e30890567287b3f204efd"
+  integrity sha512-oXnVyfTF2gzkfK3iOZCRZEnf8sH4gBASaJhY+clwWW1orIybfQpfbgg4U5Bwj5dW/4iNstM4tx4jMCVUfMCUbg==
 
 pn@^1.1.0:
   version "1.1.0"
