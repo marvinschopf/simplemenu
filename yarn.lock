@@ -1397,10 +1397,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@marvman/preact-cli-plugin-env-vars@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@marvman/preact-cli-plugin-env-vars/-/preact-cli-plugin-env-vars-1.3.0.tgz#626c286fc4a0885f648f057081517f3ff4b9110b"
-  integrity sha512-wHMtiLu8mvdGlfTJSDPMfFx/ooT81zbxgf+fieZKXUmgWiNk0Cla/sChhump6zRp6KPRAGZgLL4D4Bi102+xUw==
+"@marvman/preact-cli-plugin-env-vars@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@marvman/preact-cli-plugin-env-vars/-/preact-cli-plugin-env-vars-2.0.0.tgz#41a40cfbcb06025bb985ce7cdec1195c2d85ae3e"
+  integrity sha512-binXSnaoS3rw8d8jxgQHpDQYKZS8mCKFugnF3MPYAn1cdu/iduNW0+weuiwvbK3eh4gHjbeKB7pcoiZxA4tqyA==
   dependencies:
     dotenv "^8.2.0"
 
