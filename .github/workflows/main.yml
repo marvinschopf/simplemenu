@@ -36,4 +36,4 @@ jobs:
       run: yarn install
 
     - name: Build
-      run: yarn dlx preact-cli build
+      run: preact build
