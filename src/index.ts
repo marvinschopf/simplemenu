@@ -1,4 +1,4 @@
 import './style/index.css';
-import App from './App';
+import Controller from "./Controller";
 
-export default App;
+export default Controller;
