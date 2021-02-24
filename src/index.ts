@@ -1,4 +1,4 @@
-import './style/index.css';
-import App from "./App";
+import './style/index.css'
+import App from './App'
 
-export default App;
+export default App
