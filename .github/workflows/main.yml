@@ -17,9 +17,6 @@ jobs:
       with:
         node-version: "15"
 
-    - name: Setup Yarn V2
-      run: yarn set version berry
-
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
