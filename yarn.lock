@@ -8341,10 +8341,9 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
-plausible-tracker@^0.3.1:
+"plausible-tracker@https://github.com/marvinschopf/plausible-tracker.git#fix-prerendering":
   version "0.3.1"
-  resolved "https://registry.yarnpkg.com/plausible-tracker/-/plausible-tracker-0.3.1.tgz#dd4e1f59cafc7bf1b00e30890567287b3f204efd"
-  integrity sha512-oXnVyfTF2gzkfK3iOZCRZEnf8sH4gBASaJhY+clwWW1orIybfQpfbgg4U5Bwj5dW/4iNstM4tx4jMCVUfMCUbg==
+  resolved "https://github.com/marvinschopf/plausible-tracker.git#b875454f4bf3b6f43e823716a4051da9bc02cc76"
 
 pn@^1.1.0:
   version "1.1.0"
