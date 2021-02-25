@@ -5,11 +5,12 @@ import { FormGroup, InputGroup, Button, Alert } from "@blueprintjs/core"
 import firebase from "firebase/app"
 import "firebase/auth"
 
-type RegisterProps = {
-	path: string
-}
+import { FirebaseAuthConsumer } from "@react-firebase/auth"
+import { route } from "preact-router"
 
-type RegisterState = {
+type RegisterFormProps = {}
+
+type RegisterFormState = {
 	emailInput: string
 	passwordInput: string
 	passwordVerifyInput: string
@@ -18,8 +19,8 @@ type RegisterState = {
 	errorMessage: string
 }
 
-export default class Register extends Component<RegisterProps, RegisterState> {
-	constructor(props: RegisterProps) {
+class RegisterForm extends Component<RegisterFormProps, RegisterFormState> {
+	constructor(props: RegisterFormProps) {
 		super(props)
 		this.state = {
 			emailInput: "",
@@ -179,6 +180,22 @@ export default class Register extends Component<RegisterProps, RegisterState> {
 					{this.state.errorMessage}
 				</Alert>
 			</Fragment>
+		)
+	}
+}
+
+export default class Register extends Component {
+	render() {
+		return (
+			<FirebaseAuthConsumer>
+				{({ isSignedIn, user, providerId }) => {
+					if (!isSignedIn) {
+						return <RegisterForm />
+					} else {
+						route("/dashboard")
+					}
+				}}
+			</FirebaseAuthConsumer>
 		)
 	}
 }
