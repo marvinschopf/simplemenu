@@ -104,7 +104,12 @@ export default class Register extends Component<RegisterProps, RegisterState> {
 								.then(
 									(
 										userCredential: firebase.auth.UserCredential
-									) => {}
+									) => {
+                                        this.setState({
+                                            buttonLoading: false,
+                                        })
+                                        console.log(userCredential)
+                                    }
 								)
 								.catch((error) => {
 									let errorMessage: string =
