@@ -95,51 +95,63 @@ export default class Register extends Component<RegisterProps, RegisterState> {
 							this.state.passwordInput.length != 0 &&
 							this.state.passwordVerifyInput.length != 0
 						) {
-							firebase
-								.auth()
-								.createUserWithEmailAndPassword(
-									this.state.emailInput,
-									this.state.passwordInput
-								)
-								.then(
-									(
-										userCredential: firebase.auth.UserCredential
-									) => {
-                                        this.setState({
-                                            buttonLoading: false,
-                                        })
-                                        console.log(userCredential)
-                                    }
-								)
-								.catch((error) => {
-									let errorMessage: string =
-										"Unbekannter Fehler."
-									switch (error.code) {
-										case "auth/email-already-in-use":
-											errorMessage =
-												"Es existiert bereits ein Benutzerkonto mit dieser E-Mail-Adresse."
-											break
-										case "auth/invalid-email":
-											errorMessage =
-												"Die angegebene E-Mail-Adresse ist nicht gültig."
-											break
-										case "auth/operation-not-allowed":
-											errorMessage =
-												"Ein interner Fehler ist aufgetreten."
-											break
-										case "auth/operation-not-allowed":
-											errorMessage =
-												"Das angegebene Passwort ist zu einfach."
-											break
-										default:
-											errorMessage = "Unbekannter Fehler."
-											break
-									}
-									this.setState({
-										isAlertOpen: true,
-										errorMessage: errorMessage,
+							if (
+								this.state.passwordInput ===
+								this.state.passwordVerifyInput
+							) {
+								firebase
+									.auth()
+									.createUserWithEmailAndPassword(
+										this.state.emailInput,
+										this.state.passwordInput
+									)
+									.then(
+										(
+											userCredential: firebase.auth.UserCredential
+										) => {
+											this.setState({
+												buttonLoading: false,
+											})
+											console.log(userCredential)
+										}
+									)
+									.catch((error) => {
+										let errorMessage: string =
+											"Unbekannter Fehler."
+										switch (error.code) {
+											case "auth/email-already-in-use":
+												errorMessage =
+													"Es existiert bereits ein Benutzerkonto mit dieser E-Mail-Adresse."
+												break
+											case "auth/invalid-email":
+												errorMessage =
+													"Die angegebene E-Mail-Adresse ist nicht gültig."
+												break
+											case "auth/operation-not-allowed":
+												errorMessage =
+													"Ein interner Fehler ist aufgetreten."
+												break
+											case "auth/operation-not-allowed":
+												errorMessage =
+													"Das angegebene Passwort ist zu einfach."
+												break
+											default:
+												errorMessage =
+													"Unbekannter Fehler."
+												break
+										}
+										this.setState({
+											isAlertOpen: true,
+											errorMessage: errorMessage,
+										})
 									})
+							} else {
+								this.setState({
+									isAlertOpen: true,
+									errorMessage:
+										"Die angegebenen Passwörter stimmen nicht überein.",
 								})
+							}
 						} else {
 							this.setState({
 								isAlertOpen: true,
