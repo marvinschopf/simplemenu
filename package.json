@@ -66,5 +66,8 @@
 		"semi": false,
 		"singleQuote": false,
 		"useTabs": true
-	}
+	},
+	"browserslist": [
+		"since 2012"
+	]
 }
