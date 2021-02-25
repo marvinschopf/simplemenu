@@ -43,6 +43,9 @@ jobs:
                   APP_PLAUSIBLE_DOMAIN: ${{ secrets.PLAUSIBLE_DOMAIN }}
                   APP_ENABLE_ANALYTICS: true
 
+            - name: Create rewrite rules
+              run: echo "/* /index.html 200" >> build/_redirects
+
             - name: Deploy
               uses: marvinschopf/action-netlify-deploy@main
               with:
