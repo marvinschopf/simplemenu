@@ -117,6 +117,7 @@ class RegisterForm extends Component<RegisterFormProps, RegisterFormState> {
 												buttonLoading: false,
 											})
 											console.log(userCredential)
+											route("/dashboard")
 										}
 									)
 									.catch((error) => {

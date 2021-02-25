@@ -125,6 +125,7 @@ class LoginForm extends Component<LoginFormProps, LoginFormState> {
 										buttonLoading: false,
 									})
 									console.log(userCredential)
+									route("/dashboard")
 								}
 							)
 							.catch((error) => {
