@@ -68,6 +68,8 @@
 		"useTabs": true
 	},
 	"browserslist": [
-		"since 2012"
+		"since 2012 and not dead and > 0.5%",
+		"last 2 major versions",
+		"defaults"
 	]
 }
