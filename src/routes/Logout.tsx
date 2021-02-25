@@ -22,7 +22,8 @@
  */
 
 import { FirebaseAuthConsumer } from "@react-firebase/auth"
-import firebase from "firebase"
+import firebase from "firebase/app"
+import "firebase/auth"
 import { Component, h } from "preact"
 import { route } from "preact-router"
 
