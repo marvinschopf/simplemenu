@@ -1,13 +1,16 @@
 import { Router, route } from "preact-router"
 import { h, render } from "preact"
+import firebaseConfig from "./config/firebase"
 import firebase from "firebase/app"
 import "firebase/auth"
 import Plausible from "plausible-tracker"
 
+//@ts-ignore
+firebase.initializeApp(firebaseConfig)
+firebase.auth().languageCode = "de"
+
 import Home from "./routes/Home"
 import { FirebaseAuthProvider } from "@react-firebase/auth"
-
-import firebaseConfig from "./config/firebase"
 
 import Login from "./routes/Login"
 import { Alignment, Navbar, Button } from "@blueprintjs/core"
