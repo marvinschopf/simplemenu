@@ -45,6 +45,7 @@ import Route404 from "./routes/404"
 
 import Container from "./components/Container"
 import Dashboard from "./routes/Dashboard"
+import Logout from "./routes/Logout"
 
 let plausible: any | false = false
 
@@ -119,6 +120,7 @@ export default function Controller() {
 					<Login path="/login" />
 					<Register path="/signup" />
 					<Dashboard path="/dashboard" />
+					<Logout path="/logout" />
 					<Route404 default />
 				</Router>
 				<p>
