@@ -124,10 +124,32 @@ class Login extends Component<LoginProps, LoginState> {
 								}
 							)
 							.catch((error) => {
+								let errorMessage: string = "Unbekannter Fehler."
+								switch (error.code) {
+									case "auth/user-not-found":
+										errorMessage =
+											"Ein Konto mit den angegebenen Zugangsdaten konnte leider nicht gefunden werden."
+										break
+									case "auth/wrong-password":
+										errorMessage =
+											"Das angegebene Passwort ist nicht korrekt."
+										break
+									case "auth/user-disabled":
+										errorMessage =
+											"Dieses Benutzerkonto wurde deaktiviert."
+										break
+									case "auth/invalid-email":
+										errorMessage =
+											"Die angegebene E-Mail-Adresse ist nicht gültig."
+										break
+									default:
+										errorMessage = "Unbekannter Fehler."
+										break
+								}
 								this.setState({
 									buttonLoading: false,
 									isOpenError: true,
-									errorMessage: error.message,
+									errorMessage: errorMessage,
 								})
 							})
 					}}
