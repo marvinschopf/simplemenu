@@ -11,6 +11,7 @@ import firebaseConfig from "./config/firebase"
 
 import Login from "./routes/Login"
 import { Alignment, Navbar, Button } from "@blueprintjs/core"
+import Route404 from "./routes/404"
 
 let plausible: any | false = false
 
@@ -49,8 +50,9 @@ export default function Controller() {
 				</Navbar.Group>
 			</Navbar>
 			<Router>
-				<Login path="/login" />
 				<Home path="/" />
+				<Login path="/login" />
+				<Route404 default />
 			</Router>
 			<p>
 				<small>
