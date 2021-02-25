@@ -22,7 +22,7 @@
  */
 
 import { Router, route } from "preact-router"
-import { h, render } from "preact"
+import { Fragment, h, render } from "preact"
 import firebaseConfig from "./config/firebase"
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -33,7 +33,10 @@ firebase.initializeApp(firebaseConfig)
 firebase.auth().languageCode = "de"
 
 import Home from "./routes/Home"
-import { FirebaseAuthProvider } from "@react-firebase/auth"
+import {
+	FirebaseAuthProvider,
+	FirebaseAuthConsumer,
+} from "@react-firebase/auth"
 
 import Login from "./routes/Login"
 import Register from "./routes/Register"
@@ -70,13 +73,44 @@ export default function Controller() {
 					<Navbar.Divider />
 				</Navbar.Group>
 				<Navbar.Group align={Alignment.RIGHT}>
-					<Button
-						className="bp3-minimal"
-						text="Login"
-						onClick={() => {
-							route("/login")
+					<FirebaseAuthConsumer>
+						{({ isSignedIn, user, providerId }) => {
+							if (!isSignedIn) {
+								return (
+									<Fragment>
+										<Button
+											className="bp3-minimal"
+											text="Login"
+											onClick={() => {
+												route("/login")
+											}}
+										/>
+										<Button
+											className="bp3-minimal"
+											text="Registrieren"
+											intent="primary"
+											onClick={() => {
+												route("/signup")
+											}}
+										/>
+									</Fragment>
+								)
+							} else {
+								return (
+									<Fragment>
+										<Button
+											className="bp3-minimal"
+											text="Logout"
+											intent="danger"
+											onClick={() => {
+												route("/logout")
+											}}
+										/>
+									</Fragment>
+								)
+							}
 						}}
-					/>
+					</FirebaseAuthConsumer>
 				</Navbar.Group>
 			</Navbar>
 			<Container>
