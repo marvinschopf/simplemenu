@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { LinkContainer } from "react-router-bootstrap"
+import { Router, route } from "preact-router"
 import { h, render } from "preact"
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -32,37 +31,39 @@ export default function Controller() {
 	return (
 		<FirebaseAuthProvider firebase={firebase} {...firebaseConfig}>
 			{/*@ts-ignore*/}
-			<Navbar bg="light">
-				<LinkContainer to="/">
-					{/*@ts-ignore*/}
-					<Navbar.Brand>SimpleMenu</Navbar.Brand>
-				</LinkContainer>
-				{/*@ts-ignore*/}
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				{/*@ts-ignore*/}
-				<Navbar.Collapse id="basic-navbar-nav">
-					{/*@ts-ignore*/}
-					<Nav className="mr-auto"></Nav>
-					{/*@ts-ignore*/}
-					<Nav>
-						<LinkContainer to="/login">
-							{/*@ts-ignore*/}
-							<Button>Login</Button>
-						</LinkContainer>
-					</Nav>
-				</Navbar.Collapse>
-			</Navbar>
-			{/*@ts-ignore*/}
 			<Container>
 				<Router>
-					<Switch>
-						<Route path="/login">
-							<Login />
-						</Route>
-						<Route path="/">
-							<Home />
-						</Route>
-					</Switch>
+					{/*@ts-ignore*/}
+					<Navbar bg="light">
+						{/*@ts-ignore*/}
+						<Navbar.Brand
+							onClick={() => {
+								route("/")
+							}}
+						>
+							SimpleMenu
+						</Navbar.Brand>
+						{/*@ts-ignore*/}
+						<Navbar.Toggle aria-controls="basic-navbar-nav" />
+						{/*@ts-ignore*/}
+						<Navbar.Collapse id="basic-navbar-nav">
+							{/*@ts-ignore*/}
+							<Nav className="mr-auto"></Nav>
+							{/*@ts-ignore*/}
+							<Nav>
+								{/*@ts-ignore*/}
+								<Button
+									onClick={() => {
+										route("/login")
+									}}
+								>
+									Login
+								</Button>
+							</Nav>
+						</Navbar.Collapse>
+					</Navbar>
+					<Login path="/login" />
+					<Home path="/" />
 				</Router>
 				<p>
 					<small>
