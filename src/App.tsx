@@ -16,7 +16,7 @@ import Login from "./routes/Login"
 import { Alignment, Navbar, Button } from "@blueprintjs/core"
 import Route404 from "./routes/404"
 
-import Container from "./components/Container";
+import Container from "./components/Container"
 
 let plausible: any | false = false
 
@@ -60,17 +60,17 @@ export default function Controller() {
 					<Login path="/login" />
 					<Route404 default />
 				</Router>
+				<p>
+					<small>
+						Version:{" "}
+						<a
+							href={`https://github.com/marvinschopf/simplemenu/commit/${process.env.APP_CURRENT_COMMIT_HASH}`}
+						>
+							{process.env.APP_CURRENT_COMMIT_HASH_SHORT}
+						</a>
+					</small>
+				</p>
 			</Container>
-			<p>
-				<small>
-					Version:{" "}
-					<a
-						href={`https://github.com/marvinschopf/simplemenu/commit/${process.env.APP_CURRENT_COMMIT_HASH}`}
-					>
-						{process.env.APP_CURRENT_COMMIT_HASH_SHORT}
-					</a>
-				</small>
-			</p>
 		</FirebaseAuthProvider>
 	)
 }
