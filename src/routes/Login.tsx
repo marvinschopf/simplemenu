@@ -54,6 +54,10 @@ class Login extends Component<LoginProps, LoginState> {
 								this.setState({
 									buttonEnabled: true,
 								})
+							} else {
+								this.setState({
+									buttonEnabled: false,
+								})
 							}
 						}}
 					/>
@@ -76,6 +80,10 @@ class Login extends Component<LoginProps, LoginState> {
 							) {
 								this.setState({
 									buttonEnabled: true,
+								})
+							} else {
+								this.setState({
+									buttonEnabled: false,
 								})
 							}
 						}}
