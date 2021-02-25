@@ -1383,9 +1383,9 @@
     chalk "^4.0.0"
 
 "@marvman/preact-cli-plugin-env-vars@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@marvman/preact-cli-plugin-env-vars/-/preact-cli-plugin-env-vars-2.0.0.tgz#41a40cfbcb06025bb985ce7cdec1195c2d85ae3e"
-  integrity sha512-binXSnaoS3rw8d8jxgQHpDQYKZS8mCKFugnF3MPYAn1cdu/iduNW0+weuiwvbK3eh4gHjbeKB7pcoiZxA4tqyA==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@marvman/preact-cli-plugin-env-vars/-/preact-cli-plugin-env-vars-2.1.0.tgz#adc0bc615d6d961df4042d8b10e83433a2417da1"
+  integrity sha512-IbfmmyNTfXWujrcXIwU3EhvmsQzcd6Eq3bdW2hon9HJueHulwoO8e3XMyt32vRCO2uv/SeABXm0gA2RrrkHr/A==
   dependencies:
     dotenv "^8.2.0"
 
@@ -3025,9 +3025,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001166, caniuse-lite@^1.0.30001181:
-  version "1.0.30001191"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001191.tgz#bacb432b6701f690c8c5f7c680166b9a9f0843d9"
-  integrity sha512-xJJqzyd+7GCJXkcoBiQ1GuxEiOBCLQ0aVW9HMekifZsAVGdj5eJ4mFB9fEhSHipq9IOk/QXFJUiIr9lZT+EsGw==
+  version "1.0.30001192"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001192.tgz#b848ebc0ab230cf313d194a4775a30155d50ae40"
+  integrity sha512-63OrUnwJj5T1rUmoyqYTdRWBqFFxZFlyZnRRjDR8NSUQFB6A+j/uBORU/SyJ5WzDLg4SPiZH40hQCBNdZ/jmAw==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -9693,9 +9693,9 @@ run-queue@^1.0.0, run-queue@^1.0.3:
     aproba "^1.1.1"
 
 rxjs@^6.6.0:
-  version "6.6.3"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
-  integrity sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==
+  version "6.6.6"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.6.tgz#14d8417aa5a07c5e633995b525e1e3c0dec03b70"
+  integrity sha512-/oTwee4N4iWzAMAL9xdGKjkEHmIwupR3oXbQjCKywF1BeFohswF3vZdogbmEF6pZkOsXTzWkrZszrWpQTByYVg==
   dependencies:
     tslib "^1.9.0"
 
