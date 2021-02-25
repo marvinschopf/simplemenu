@@ -54,7 +54,11 @@ class Login extends Component<LoginProps, LoginState> {
 								this.setState({
 									buttonEnabled: true,
 								})
-							} else {
+							}
+							if (
+								this.state.passwordInput.length === 0 ||
+								this.state.emailInput.length === 0
+							) {
 								this.setState({
 									buttonEnabled: false,
 								})
@@ -81,7 +85,11 @@ class Login extends Component<LoginProps, LoginState> {
 								this.setState({
 									buttonEnabled: true,
 								})
-							} else {
+							}
+							if (
+								this.state.passwordInput.length === 0 ||
+								this.state.emailInput.length === 0
+							) {
 								this.setState({
 									buttonEnabled: false,
 								})
