@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"license": "AGPL-3.0-or-later",
 	"scripts": {
-		"build": "CURRENT_COMMIT_HASH=$(git rev-parse HEAD) CURRENT_COMMIT_HASH_SHORT=$(git rev-parse --short HEAD) preact build --no-prerender",
+		"build": "CURRENT_COMMIT_HASH=$(git rev-parse HEAD) CURRENT_COMMIT_HASH_SHORT=$(git rev-parse --short HEAD) preact build",
 		"serve": "sirv build --port 8080 --cors --single",
 		"dev": "preact watch",
 		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
