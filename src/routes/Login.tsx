@@ -43,6 +43,7 @@ class Login extends Component<LoginProps, LoginState> {
 					<InputGroup
 						placeholder="E-Mail-Adresse"
 						value={this.state.emailInput}
+						type="email"
 						onChange={(event) => {
 							this.setState({
 								emailInput: event.target.value,
@@ -74,6 +75,7 @@ class Login extends Component<LoginProps, LoginState> {
 					<InputGroup
 						placeholder="Passwort"
 						value={this.state.passwordInput}
+						type="password"
 						onChange={(event) => {
 							this.setState({
 								passwordInput: event.target.value,
