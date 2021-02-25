@@ -31,7 +31,9 @@ import "firebase/auth"
 import { FirebaseAuthConsumer } from "@react-firebase/auth"
 import { route } from "preact-router"
 
-type RegisterFormProps = {}
+type RegisterFormProps = {
+	plausible?: any
+}
 
 type RegisterFormState = {
 	emailInput: string
@@ -140,6 +142,11 @@ class RegisterForm extends Component<RegisterFormProps, RegisterFormState> {
 												buttonLoading: false,
 											})
 											console.log(userCredential)
+											if (this.props.plausible) {
+												this.props.plausible.trackEvent(
+													"Signup"
+												)
+											}
 											route("/dashboard")
 										}
 									)
@@ -208,12 +215,27 @@ class RegisterForm extends Component<RegisterFormProps, RegisterFormState> {
 	}
 }
 
-export default class Register extends Component {
+type RegisterProps = {
+	plausible?: any
+}
+
+export default class Register extends Component<RegisterProps> {
+	constructor(props: RegisterProps) {
+		super(props)
+	}
+
 	render() {
 		return (
 			<FirebaseAuthConsumer>
 				{({ isSignedIn, user, providerId }) => {
 					if (!isSignedIn) {
+						if (this.props.plausible) {
+							return (
+								<RegisterForm
+									plausible={this.props.plausible}
+								/>
+							)
+						}
 						return <RegisterForm />
 					} else {
 						route("/dashboard")

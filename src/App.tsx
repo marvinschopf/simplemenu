@@ -118,7 +118,7 @@ export default function Controller() {
 				<Router>
 					<Home path="/" />
 					<Login path="/login" />
-					<Register path="/signup" />
+					<Register path="/signup" plausible={plausible} />
 					<Dashboard path="/dashboard" />
 					<Logout path="/logout" />
 					<Route404 default />
