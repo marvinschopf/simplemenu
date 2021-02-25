@@ -13,6 +13,7 @@ import Home from "./routes/Home"
 import { FirebaseAuthProvider } from "@react-firebase/auth"
 
 import Login from "./routes/Login"
+import Register from "./routes/Register"
 import { Alignment, Navbar, Button } from "@blueprintjs/core"
 import Route404 from "./routes/404"
 
@@ -58,6 +59,7 @@ export default function Controller() {
 				<Router>
 					<Home path="/" />
 					<Login path="/login" />
+					<Register path="/signup" />
 					<Route404 default />
 				</Router>
 				<p>
