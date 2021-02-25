@@ -18,6 +18,7 @@ import { Alignment, Navbar, Button } from "@blueprintjs/core"
 import Route404 from "./routes/404"
 
 import Container from "./components/Container"
+import Dashboard from "./routes/Dashboard"
 
 let plausible: any | false = false
 
@@ -60,6 +61,7 @@ export default function Controller() {
 					<Home path="/" />
 					<Login path="/login" />
 					<Register path="/signup" />
+					<Dashboard path="/dashboard" />
 					<Route404 default />
 				</Router>
 				<p>
