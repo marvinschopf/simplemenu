@@ -18,9 +18,9 @@ import Login from "./routes/Login"
 let plausible: any | false = false
 
 if (typeof document !== "undefined" && typeof window !== "undefined") {
-	if (process.env.ENABLE_ANALYTICS) {
+	if (process.env.APP_ENABLE_ANALYTICS) {
 		plausible = Plausible({
-			domain: process.env.PLAUSIBLE_DOMAIN,
+			domain: process.env.APP_PLAUSIBLE_DOMAIN,
 		})
 
 		plausible.enableAutoPageviews()
@@ -69,9 +69,9 @@ export default function Controller() {
 					<small>
 						Version:{" "}
 						<a
-							href={`https://github.com/marvinschopf/simplemenu/commit/${process.env.CURRENT_COMMIT_HASH}`}
+							href={`https://github.com/marvinschopf/simplemenu/commit/${process.env.APP_CURRENT_COMMIT_HASH}`}
 						>
-							{process.env.CURRENT_COMMIT_HASH_SHORT}
+							{process.env.APP_CURRENT_COMMIT_HASH_SHORT}
 						</a>
 					</small>
 				</p>
