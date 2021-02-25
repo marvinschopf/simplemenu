@@ -86,6 +86,9 @@ export default class Register extends Component<RegisterProps, RegisterState> {
 				<Button
 					text="Registrieren"
 					loading={this.state.buttonLoading}
+					large={true}
+					fill={true}
+					intent="primary"
 					onClick={() => {
 						this.setState({
 							buttonLoading: true,

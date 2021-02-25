@@ -103,6 +103,9 @@ class Login extends Component<LoginProps, LoginState> {
 					disabled={!this.state.buttonEnabled}
 					text="Anmelden"
 					loading={this.state.buttonLoading}
+					large={true}
+					fill={true}
+					intent="primary"
 					onClick={() => {
 						this.setState({
 							buttonLoading: true,
