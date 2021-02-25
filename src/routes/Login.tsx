@@ -5,7 +5,10 @@ import { FormGroup, InputGroup, Button, Alert } from "@blueprintjs/core"
 import firebase from "firebase/app"
 import "firebase/auth"
 
-type LoginState = {
+import { FirebaseAuthConsumer } from "@react-firebase/auth"
+import { route } from "preact-router"
+
+type LoginFormState = {
 	emailInput: string
 	passwordInput: string
 	buttonEnabled: boolean
@@ -14,12 +17,10 @@ type LoginState = {
 	errorMessage: string
 }
 
-type LoginProps = {
-	path: string
-}
+type LoginFormProps = {}
 
-class Login extends Component<LoginProps, LoginState> {
-	constructor(props: LoginProps) {
+class LoginForm extends Component<LoginFormProps, LoginFormState> {
+	constructor(props: LoginFormProps) {
 		super(props)
 		this.state = {
 			emailInput: "",
@@ -169,6 +170,22 @@ class Login extends Component<LoginProps, LoginState> {
 					<b>Fehler:</b> {this.state.errorMessage}
 				</Alert>
 			</Fragment>
+		)
+	}
+}
+
+class Login extends Component {
+	render() {
+		return (
+			<FirebaseAuthConsumer>
+				{({ isSignedIn, user, providerId }) => {
+					if (!isSignedIn) {
+						return <LoginForm />
+					} else {
+						route("/dashboard")
+					}
+				}}
+			</FirebaseAuthConsumer>
 		)
 	}
 }
