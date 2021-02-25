@@ -16,6 +16,8 @@ import Login from "./routes/Login"
 import { Alignment, Navbar, Button } from "@blueprintjs/core"
 import Route404 from "./routes/404"
 
+import Container from "./components/Container";
+
 let plausible: any | false = false
 
 if (typeof document !== "undefined" && typeof window !== "undefined") {
@@ -52,11 +54,13 @@ export default function Controller() {
 					/>
 				</Navbar.Group>
 			</Navbar>
-			<Router>
-				<Home path="/" />
-				<Login path="/login" />
-				<Route404 default />
-			</Router>
+			<Container>
+				<Router>
+					<Home path="/" />
+					<Login path="/login" />
+					<Route404 default />
+				</Router>
+			</Container>
 			<p>
 				<small>
 					Version:{" "}
