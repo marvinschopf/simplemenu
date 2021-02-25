@@ -9,7 +9,7 @@
 		"dev": "preact watch",
 		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
 		"test": "jest ./tests",
-		"prettier": "prettier --write src/ tests/ .github/ *.json *.yml *.md"
+		"prettier": "prettier --write src/ tests/ .github/ *.json *.yml *.md *.js"
 	},
 	"eslintConfig": {
 		"parser": "@typescript-eslint/parser",
