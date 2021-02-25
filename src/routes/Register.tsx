@@ -143,6 +143,7 @@ export default class Register extends Component<RegisterProps, RegisterState> {
 										this.setState({
 											isAlertOpen: true,
 											errorMessage: errorMessage,
+											buttonLoading: false,
 										})
 									})
 							} else {
@@ -150,12 +151,14 @@ export default class Register extends Component<RegisterProps, RegisterState> {
 									isAlertOpen: true,
 									errorMessage:
 										"Die angegebenen Passwörter stimmen nicht überein.",
+									buttonLoading: false,
 								})
 							}
 						} else {
 							this.setState({
 								isAlertOpen: true,
 								errorMessage: "Bitte fülle alle Felder aus.",
+								buttonLoading: false,
 							})
 						}
 					}}
