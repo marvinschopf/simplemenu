@@ -26,6 +26,7 @@ import { Fragment, h, render } from "preact"
 import firebaseConfig from "./config/firebase"
 import firebase from "firebase/app"
 import "firebase/auth"
+import "firebase/firestore"
 import Plausible from "plausible-tracker"
 
 //@ts-ignore
