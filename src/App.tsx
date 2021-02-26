@@ -120,9 +120,9 @@ export default function Controller() {
 					<Home path="/" />
 					<Login path="/login" />
 					<Register path="/signup" plausible={plausible} />
+					<Restaurants path="/dashboard/restaurants" />
 					<Dashboard path="/dashboard" />
 					<Logout path="/logout" />
-					<Restaurants path="/dashboard/restaurants" />
 					<Route404 default />
 				</Router>
 				<p>

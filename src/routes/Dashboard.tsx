@@ -25,6 +25,7 @@ import { Component, Fragment, h } from "preact"
 
 import { FirebaseAuthConsumer } from "@react-firebase/auth"
 import { route } from "preact-router"
+import { Button } from "@blueprintjs/core"
 
 type DashboardViewProps = {
 	user: any
@@ -44,6 +45,12 @@ class DashboardView extends Component<DashboardViewProps, DashboardViewState> {
 					<h1>Willkommen, {this.props.user.fullName}!</h1>
 				)}
 				{!this.props.user.fullName && <h1>Herzlich Willkommen!</h1>}
+				<Button
+					text="Meine Restaurants"
+					onClick={() => {
+						route("/dashboard/restaurants")
+					}}
+				/>
 			</Fragment>
 		)
 	}
