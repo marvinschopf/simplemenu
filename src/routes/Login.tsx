@@ -184,6 +184,15 @@ class LoginForm extends Component<LoginFormProps, LoginFormState> {
 							})
 					}}
 				/>
+				<br />
+				<p
+					style={{
+						textAlign: "center",
+					}}
+				>
+					- oder -
+				</p>
+				<br />
 				<Button
 					large={true}
 					fill={true}
