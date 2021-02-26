@@ -47,6 +47,7 @@ import Container from "./components/Container"
 import Dashboard from "./routes/Dashboard"
 import Logout from "./routes/Logout"
 import Restaurants from "./routes/dashboard/Restaurants"
+import { FirestoreProvider } from "@react-firebase/firestore"
 
 let plausible: any | false = false
 
@@ -63,79 +64,81 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
 export default function Controller() {
 	return (
 		<FirebaseAuthProvider firebase={firebase} {...firebaseConfig}>
-			<Navbar>
-				<Navbar.Group align={Alignment.LEFT}>
-					<Navbar.Heading
-						onClick={() => {
-							route("/")
-						}}
-					>
-						SimpleMenu
-					</Navbar.Heading>
-					<Navbar.Divider />
-				</Navbar.Group>
-				<Navbar.Group align={Alignment.RIGHT}>
-					<FirebaseAuthConsumer>
-						{({ isSignedIn, user, providerId }) => {
-							if (!isSignedIn) {
-								return (
-									<Fragment>
-										<Button
-											className="bp3-minimal"
-											text="Login"
-											onClick={() => {
-												route("/login")
-											}}
-										/>
-										<Button
-											className="bp3-minimal"
-											text="Registrieren"
-											intent="primary"
-											onClick={() => {
-												route("/signup")
-											}}
-										/>
-									</Fragment>
-								)
-							} else {
-								return (
-									<Fragment>
-										<Button
-											className="bp3-minimal"
-											text="Logout"
-											intent="danger"
-											onClick={() => {
-												route("/logout")
-											}}
-										/>
-									</Fragment>
-								)
-							}
-						}}
-					</FirebaseAuthConsumer>
-				</Navbar.Group>
-			</Navbar>
-			<Container>
-				<Router>
-					<Home path="/" />
-					<Login path="/login" />
-					<Register path="/signup" plausible={plausible} />
-					<Restaurants path="/dashboard/restaurants" />
-					<Dashboard path="/dashboard" />
-					<Logout path="/logout" />
-					<Route404 default />
-				</Router>
-				<p>
-					<small>
-						Version:{" "}
-						<a
-							href={`https://github.com/marvinschopf/simplemenu/commit/${process.env.APP_CURRENT_COMMIT_HASH}`}
+			<FirestoreProvider firebase={firebase} {...firebaseConfig}>
+				<Navbar>
+					<Navbar.Group align={Alignment.LEFT}>
+						<Navbar.Heading
+							onClick={() => {
+								route("/")
+							}}
 						>
-							{process.env.APP_CURRENT_COMMIT_HASH_SHORT}
-						</a>
-					</small>
-				</p>
-			</Container>
+							SimpleMenu
+						</Navbar.Heading>
+						<Navbar.Divider />
+					</Navbar.Group>
+					<Navbar.Group align={Alignment.RIGHT}>
+						<FirebaseAuthConsumer>
+							{({ isSignedIn, user, providerId }) => {
+								if (!isSignedIn) {
+									return (
+										<Fragment>
+											<Button
+												className="bp3-minimal"
+												text="Login"
+												onClick={() => {
+													route("/login")
+												}}
+											/>
+											<Button
+												className="bp3-minimal"
+												text="Registrieren"
+												intent="primary"
+												onClick={() => {
+													route("/signup")
+												}}
+											/>
+										</Fragment>
+									)
+								} else {
+									return (
+										<Fragment>
+											<Button
+												className="bp3-minimal"
+												text="Logout"
+												intent="danger"
+												onClick={() => {
+													route("/logout")
+												}}
+											/>
+										</Fragment>
+									)
+								}
+							}}
+						</FirebaseAuthConsumer>
+					</Navbar.Group>
+				</Navbar>
+				<Container>
+					<Router>
+						<Home path="/" />
+						<Login path="/login" />
+						<Register path="/signup" plausible={plausible} />
+						<Restaurants path="/dashboard/restaurants" />
+						<Dashboard path="/dashboard" />
+						<Logout path="/logout" />
+						<Route404 default />
+					</Router>
+					<p>
+						<small>
+							Version:{" "}
+							<a
+								href={`https://github.com/marvinschopf/simplemenu/commit/${process.env.APP_CURRENT_COMMIT_HASH}`}
+							>
+								{process.env.APP_CURRENT_COMMIT_HASH_SHORT}
+							</a>
+						</small>
+					</p>
+				</Container>
+			</FirestoreProvider>
 		</FirebaseAuthProvider>
 	)
 }
