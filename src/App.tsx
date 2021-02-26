@@ -46,6 +46,7 @@ import Route404 from "./routes/404"
 import Container from "./components/Container"
 import Dashboard from "./routes/Dashboard"
 import Logout from "./routes/Logout"
+import Restaurants from "./routes/dashboard/Restaurants"
 
 let plausible: any | false = false
 
@@ -121,6 +122,7 @@ export default function Controller() {
 					<Register path="/signup" plausible={plausible} />
 					<Dashboard path="/dashboard" />
 					<Logout path="/logout" />
+					<Restaurants path="/dashboard/restaurants" />
 					<Route404 default />
 				</Router>
 				<p>
