@@ -37,11 +37,6 @@ class RestaurantsView extends Component<RestaurantViewProps> {
 				<h1>Meine Restaurants</h1>
 				<FirestoreCollection
 					path="/restaurants/"
-					where={{
-						field: "owner",
-						operator: "==",
-						value: this.props.user.uid,
-					}}
 				>
 					{(d) => {
 						return d.isLoading ? "Loading" : <pre>{d.value}</pre>
