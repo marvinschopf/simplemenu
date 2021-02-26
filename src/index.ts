@@ -21,6 +21,17 @@
  *
  */
 
+import * as Sentry from "@sentry/react"
+import { Integrations } from "@sentry/tracing"
+
+if (process.env.APP_ENABLE_SENTRY) {
+	Sentry.init({
+		dsn: process.env.APP_SENTRY_DSN,
+		integrations: [new Integrations.BrowserTracing()],
+		tracesSampleRate: 0.0,
+	})
+}
+
 import "./style/index.css"
 import App from "./App"
 
