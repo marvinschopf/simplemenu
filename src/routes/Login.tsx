@@ -38,6 +38,7 @@ type LoginFormState = {
 	buttonLoading: boolean
 	isOpenError: boolean
 	errorMessage: string
+	googleButtonLoading: boolean
 }
 
 type LoginFormProps = {}
@@ -52,6 +53,7 @@ class LoginForm extends Component<LoginFormProps, LoginFormState> {
 			buttonLoading: false,
 			isOpenError: false,
 			errorMessage: "",
+			googleButtonLoading: false,
 		}
 	}
 
@@ -176,6 +178,48 @@ class LoginForm extends Component<LoginFormProps, LoginFormState> {
 								}
 								this.setState({
 									buttonLoading: false,
+									isOpenError: true,
+									errorMessage: errorMessage,
+								})
+							})
+					}}
+				/>
+				<Button
+					large={true}
+					fill={true}
+					text="Anmelden mit Google"
+					loading={this.state.googleButtonLoading}
+					onClick={() => {
+						this.setState({
+							googleButtonLoading: true,
+						})
+						firebase
+							.auth()
+							.signInWithPopup(
+								new firebase.auth.GoogleAuthProvider()
+							)
+							.then((oauthData) => {
+								this.setState({
+									googleButtonLoading: false,
+								})
+								const user: firebase.User | null =
+									oauthData.user
+								console.log(user)
+								route("/dashboard")
+							})
+							.catch((error) => {
+								let errorMessage: string = ""
+								switch (error.code) {
+									case "auth/account-exists-with-different-credential":
+										errorMessage =
+											"Es existiert bereits ein Benutzerkonto mit gleicher E-Mail-Adresse."
+										break
+									default:
+										errorMessage = error.message
+										break
+								}
+								this.setState({
+									googleButtonLoading: false,
 									isOpenError: true,
 									errorMessage: errorMessage,
 								})
