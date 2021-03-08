@@ -31,7 +31,7 @@
 		"firebase": "^8.2.9",
 		"plausible-tracker": "^0.3.1",
 		"preact": "^10.3.1",
-		"preact-render-to-string": "^5.1.4",
+		"preact-render-to-string": "^5.1.13",
 		"preact-router": "^3.2.1"
 	},
 	"devDependencies": {
