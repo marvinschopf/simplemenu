@@ -26,7 +26,7 @@
 		"@blueprintjs/core": "^3.39.0",
 		"@react-firebase/auth": "^0.2.10",
 		"@react-firebase/firestore": "^0.5.5",
-		"@sentry/react": "^6.2.0",
+		"@sentry/react": "^6.2.3",
 		"@sentry/tracing": "^6.2.0",
 		"firebase": "^8.2.9",
 		"plausible-tracker": "^0.3.1",
