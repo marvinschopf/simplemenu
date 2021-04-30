@@ -27,7 +27,7 @@
 		"@react-firebase/auth": "^0.2.10",
 		"@react-firebase/firestore": "^0.5.5",
 		"@sentry/react": "^6.2.0",
-		"@sentry/tracing": "^6.2.0",
+		"@sentry/tracing": "^6.3.4",
 		"firebase": "^8.2.9",
 		"plausible-tracker": "^0.3.1",
 		"preact": "^10.3.1",
