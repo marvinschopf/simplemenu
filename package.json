@@ -28,7 +28,7 @@
 		"@react-firebase/firestore": "^0.5.5",
 		"@sentry/react": "^6.2.0",
 		"@sentry/tracing": "^6.2.0",
-		"firebase": "^8.2.9",
+		"firebase": "^8.8.0",
 		"plausible-tracker": "^0.3.1",
 		"preact": "^10.3.1",
 		"preact-render-to-string": "^5.1.4",
